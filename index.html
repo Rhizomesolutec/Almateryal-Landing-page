@@ -113,3 +113,51 @@
     <img src="webimage03.jpeg" alt="Preview 2">
   </section>
 
+  <!-- Contact Section -->
+  <section>
+    <h2>Contact</h2>
+    <p>Email us at: info@almateryal.com</p>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/971527479685" target="_blank" class="btn whatsapp">
+      💬 WhatsApp
+    </a>
+
+    <!-- Call Button -->
+    <a href="tel:+971581895287" class="btn call">
+      📞 Call Us
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AL MATERYAL FZ LLC. All rights reserved.</p>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    // Set launch date (YYYY-MM-DD format)
+    const launchDate = new Date("2025-12-20T00:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If countdown finished
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "We are live!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
