@@ -14,13 +14,19 @@
     }
     header {
       text-align: center;
-      padding: 50px 20px;
-      background: #006d77; /* ✅ Changed to Dark Teal */
+      padding: 25px 20px;   /* ✅ Reduced header height */
+      background: #006d77;  /* Dark Teal */
       color: #fff;
     }
     header img {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 150px;     /* ✅ Smaller logo */
+      margin-bottom: 10px;
+    }
+    .company-name {
+      font-size: 1.5em;
+      margin: 5px 0 15px;
+      color: #ff6f00;       /* Cyber Orange accent */
+      font-weight: bold;
     }
     section {
       padding: 40px 20px;
@@ -28,7 +34,7 @@
     }
     h2 {
       margin-bottom: 20px;
-      color: #ff6f00; /* Cyber Orange headings */
+      color: #ff6f00;       /* Cyber Orange headings */
     }
     p {
       color: #f5f5f5;
@@ -39,15 +45,15 @@
       gap: 20px;
     }
     .gallery img {
-      width: 100%;          /* Full width */
-      height: auto;         /* Keep aspect ratio */
+      width: 100%;          /* Full width images */
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       border: 3px solid #ff6f00; /* Cyber Orange border */
     }
     #countdown {
       font-size: 2em;
-      color: #0a192f; /* Dark Blue text inside teal header */
+      color: #0a192f;       /* Dark Blue text inside teal header */
       background: #fff;
       display: inline-block;
       padding: 10px 20px;
@@ -57,7 +63,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #006d77; /* Match header color */
+      background: #006d77;  /* Match header color */
       color: #fff;
     }
     .btn {
@@ -87,7 +93,8 @@
   <!-- Header with logo -->
   <header>
     <img src="logo design.png" alt="My Logo">
-    <h1>We are building something exciting! Our website will feature services, updates, and more</h1>
+    <h2 class="company-name">AL MATERYAL FZ LLC</h2>
+    <p>We are building something exciting! Our website will feature services, updates, and more</p>
     <p>We’ll be live very soon. Stay tuned!</p>
     <!-- Countdown Timer -->
     <div id="countdown"></div>
@@ -106,51 +113,3 @@
     <img src="webimage03.jpeg" alt="Preview 2">
   </section>
 
-  <!-- Contact Section -->
-  <section>
-    <h2>Contact</h2>
-    <p>Email us at: info@almateryal.com</p>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/971527479685" target="_blank" class="btn whatsapp">
-      💬 WhatsApp
-    </a>
-
-    <!-- Call Button -->
-    <a href="tel:+971581895287" class="btn call">
-      📞 Call Us
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 My Website. All rights reserved.</p>
-  </footer>
-
-  <!-- Countdown Script -->
-  <script>
-    // Set launch date (YYYY-MM-DD format)
-    const launchDate = new Date("2025-12-20T00:00:00").getTime();
-
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      // Time calculations
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML =
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-      // If countdown finished
-      if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "We are live!";
-      }
-    }, 1000);
-  </script>
-</body>
-</html>
